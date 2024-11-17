@@ -1,0 +1,375 @@
+#!usr/syndicate/python3
+import os
+#the password is 0000
+#the password is 0000
+#the password is 0000
+#the password is 0000
+#the password is 0000
+#the password is 0000
+
+
+#! The syndicate:
+
+members = ["CJ", "Snipper", "Gun", "Shika" , "Okami"]
+
+the_noxlst = [{"Alias": "CJ", "Real name":"Carl Johnson", "Age": 32 , "Address":"San Andreas, GTA",
+"Wanted status":"4 stars", "code": 104 , "Rank": "Blue"  },
+
+{"Alias": "Snipper", "Real name":"Naji Hyuga", "Age":43 , "Address":"Kyoto, Japan",
+"Wanted status":"Clean", "code" : 908 , "Rank": "Black"  },
+
+{"Alias": "Gun", "Real name":"Jimadi Kesari", "Age": 28 , "Address":"Kathmandu, Nepal",
+"Wanted status":"3 stars", "code": 941 , "Rank": "Red"  },
+
+{"Alias": "Shika", "Real name":"Penny Nutcracker", "Age": 36 , "Address":"Manhattan, New York , USA",
+"Wanted status":"Clean", "code": "Inaccssesible" , "Rank": "Green"  },
+
+{"Alias": "Okami", "Real name": "Khushi Choudhary" , "Age" : 17 , "Address": " Rajasthan, India" , "Wanted status":"Clean", "code": "Inaccssesible", "Rank": "Green"},
+
+
+]
+    
+
+def connect():
+
+ 
+  p_ass = input("Enter password: ")
+  if p_ass == '0000':
+      input("Connecting..." )
+      print("This is The Sierra Syndicate(Nox)")
+      return register()
+      
+  else:
+      print("wrong password. This is your final attempt")
+      p_ass = input("Enter your code: " )
+      if p_ass == '0000':
+        input("Connecting..." )
+        print("The Sierra Syndicate(Nox) database")
+        return register()
+      else:
+        print("Error") 
+        
+def russian_R():
+  print( '''
+ To access Nox, enter the following details:  
+    
+ warning : Wrong details, any suspicious actions will force
+           Nox to trace down and eliminate the
+           suspicious agent.***
+
+  ''')
+
+  name = input("Name: ")
+  bd = input("Bank account number: ")
+  import os
+  os.system('clear')
+  pro_ =input(name + " your location is being traced and verified....\n(Press enter to continue)" )
+  pro_s = input("We have your coordinates locked and verified....\n(Press enter to continue)")
+  os.system('clear')
+
+  print("""Play a round of Russian Roulette with
+one of our members to qualify as a cadidate
+member of the Sierra Syndicate.
+  
+The results will be executed by our agent immediately\n\n""")
+  return the_game(name)
+
+  
+  
+
+
+def f_nox():
+ while True:
+   print('''
+          The Nox
+---------------------------
+1. Display all profiles
+2. Search a profile
+3. About the Sierra Syndicate
+4. Modify a profile
+5. Exit 
+    ''')
+
+   ch= input('Enter Your Choice :  ')
+
+   if ch=='1':
+        os.system('clear')
+        for i in the_noxlst: 
+          print(i, end =' \n\n') 
+                
+        
+
+        
+        input('Press Enter to continue... ')
+        os.system('clear')
+
+   elif ch=='2':
+       os.system('clear')
+       print(""" Search Menu
+------------
+1. Search by NoxRec code
+2. Search by Name
+3. Return""")
+       sech= int(input('Enter Your Choice :  '))
+        
+       
+       if sech==1:
+         searchval=int(input('Enter code to be searched :   '))
+         flag=0 
+            
+            
+         for profiles in the_noxlst:
+           if profiles['code']==searchval:
+             os.system('clear')
+             print(profiles)
+             flag=1  
+             break
+            
+           if flag==0:
+              print('Such profile does not exist !!!')
+            
+            
+       elif sech==2:
+            searchval=input('Enter Name to be searched :  ')
+            flag=0
+            
+            for profiles in the_noxlst:
+                if profiles['Alias']==searchval:
+                    os.system('clear')
+                    print(profiles)
+                    flag=1
+                    break
+            
+            if flag==0:
+                print('Such profile does not exist !!!')
+            
+       elif sech==3:
+           print('You will be redirected....')
+        
+       else:
+           print('Invalid Choice')
+       input('Press Enter to continue.....')      
+
+   elif ch == '3':
+     os.system('clear')
+     print('''
+    The Sierra syndicate was first founded in the
+    18th century as an independent pirate
+    organisation and thrives in the 21st century
+    as the largest underworld network.
+        
+    Our masters and forefathers, worshippers of luck
+    and fortune, valued equality, loyalty, integrity
+    and chivalary and these are the principles we
+    must uphold. 
+     
+    Fortune favors the brave and Sierra favors the
+    fortunate. Good luck! 
+     
+    ----------------
+
+    Dear sierrian,
+     
+    I love you all.
+
+    I prefer cats over dogs and burgers over pizzas.
+    Know that if you want to get on my good side
+    
+      
+    Your lovely master
+     -Howl 
+
+    P.S. I have eyes and ears everywhere, so if you
+    keep saying the new master is crazy, I'll be hurt
+    and you may hurt twice as much. 
+
+    P.P.S. Good luck my darlings!
+
+     
+     ''') 
+   
+     input("Press enter to continue...")  
+     os.system('clear')
+
+   elif ch =='5':
+     print('May the gods of fortune be with you.')
+     break
+
+   elif ch == '4':
+     searchval=int(input('Enter NoxRec code of your modification target :   '))
+     flag=0
+        
+     for i in range(len(the_noxlst)):
+       if the_noxlst[i]['code']==searchval:
+         print(the_noxlst[i])
+         flag=1
+                
+         print("""
+  Modifiy
+------------
+1. Alias
+2. Address
+3. NoxRec Code
+4. Wanted status
+5. Real name:
+6. Rank""")
+         mch=int(input('Enter your choice :  '))
+                
+         if mch==1:
+           the_noxlst[i]['Alias']=input('Enter New Name : ')
+         elif mch==2:
+           the_noxlst[i]['Address']=int(input('Enter new address        : '))
+         elif mch==3:
+           the_noxlst[i]['code']=input('Enter New code        : ')
+         elif mch==4:
+           the_noxlst[i]['Wanted status']=input('Enter Modification        : ')
+         elif mch==5:
+           the_noxlst[i]['Real name']=input('Enter Modified Address        : ')
+         elif mch==6:
+           the_noxlst[i]['Rank']=input('Enter New rank  : ')
+         else:
+           print('Invalid Choice, Modification Cancelled')
+                
+         print('Now the Modified record is : ')
+         print(the_noxlst[i])
+                
+         break
+     if flag==0:
+       print('Record does not exist in the Database !!!')
+             
+       input('Press Enter to continue.....')  
+   else:
+     print('Invalid choice, try again')
+     input('Press Enter to continue... ')
+def register():
+  res = input("Are you an existing member?\n1. Yes\n2. No\n> ")
+  if res == '1': 
+    nox_code = input("Your NoxRec code: ")
+    for profiles in the_noxlst:
+      if str(profiles['code']) == nox_code:
+        import os
+        os.system('clear')
+        print("Welcome " + profiles['Alias'])
+        return f_nox()
+      elif nox_code == 'G150':
+        import os
+        os.system('clear')
+        print("Welcome Okami")
+        return f_nox()
+
+      else:
+        print("Access Denied") 
+  elif res == '2':
+    import os
+    os.system('clear')
+    return russian_R() 
+  else:
+    print("Please select a valid option")
+    return register()        
+
+def the_game(player1):
+  
+  print(members)
+
+  opw = input("choose your oppponent from list: ")
+  flag = 0
+
+  for i in members:
+    if opw == i:
+      flag = 1  
+      if flag == 1:
+        player2 = opw
+        os.system('clear')
+        print("The game comences between: \n\n")
+        print(player1 + " Vs. " + player2) 
+        plyrs = [player1, player2]       
+        import random
+        random_no = random.randint(0,0)
+        
+        input("(press enter to continue...)")
+        os.system('clear')
+        if random_no == plyrs.index(player1):
+          print("Congratulations! " + plyrs[0] + " ,is the winner")
+          print(plyrs[1] + " ,We hope you had a good time on earth. See you in the \nafterlife!\n")
+          print(player1 + ", " + gen_code() +  " \nEnter the following details to complete your registration")
+           
+          input("Press enter to continue... ")
+          os.system('clear')
+          return new_candidate()
+        
+    
+    
+
+        elif random_no == plyrs.index(player2):
+          print("Congratulations! " + plyrs[1] + " ,is the winner")
+          print(plyrs[0] + " ,We hope you had a good time on earth. See you in the afterlife!")
+          
+      
+        else:
+          print("No winner in this round")
+          return no_looser()
+      
+      
+  if flag == 0:
+      print("Enter a vlaid choice")
+      return the_game(player1)    
+def no_looser():
+  print('''
+Congratulations! You have both survived to be a part of
+Nox.\n'''
+  
+   + gen_code() + 
+  
+ '''
+You are now a Nox member candidate.
+Enter the following details:
+  ''')
+
+  
+
+  D1={}
+  D1['Alias']= input('Enter your code name:  ')
+  D1['Real Name']=input('Enter Your real name :  ')
+  D1['Age']= input('Enter your age :  ')
+  D1['Address']=input('Enter your address :  ')
+  D1['Wanted status']= "Under observation"
+  D1['code']= input('Enter your new NoxRec code :  ')
+  D1['Rank']= "Blue"
+
+  the_noxlst.append(D1)
+  members.append(D1['Alias'])
+  os.system('clear') 
+  input("Press enter to continue... ")
+  os.system('clear')
+  print("Welcome, " + D1['Alias'])
+  return f_nox()
+  
+def new_candidate():
+ 
+  
+  D1={}
+  D1['Alias']= input('Enter your code name:  ')
+  D1['Real Name']=input('Enter Your real name :  ')
+  D1['Age']= input('Enter your age :  ')
+  D1['Address']=input('Enter your address :  ')
+  D1['Wanted status']= "Under observation"
+  D1['code']= input('Enter your new NoxRec code :  ')
+  D1['Rank']= "Blue"
+
+  the_noxlst.append(D1)
+  members.append(D1['Alias'])
+  os.system('clear')
+  print("Welcome, " + D1['Alias'])
+  return f_nox()
+  
+def gen_code():
+    import random
+    ran_1 = random.randint(0,9)
+    ran_2 = random.randint(0,9)
+    ran_3 = random.randint(0,9)
+    
+    new_noxcode = str(ran_1) + str(ran_2) + str(ran_3)
+    return new_noxcode + " is your new NoxRec code"
+
+   
+connect()
